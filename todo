@@ -1,0 +1,27 @@
+{Bureaucrat ex01}
+- [ ] dare qualcosa da fare ai burocrati
+- [ ] creare una classe Form:
+		[ ] membri privati:
+			. const name
+			. bool is_signed (a costruzione sara' falso)
+			. const required_to_sign
+			. const required_to_execute
+
+		[ ] i grade seguiranno le stesse regole dei burocrati (1 - 150)
+			quindi ci saranno in questa classe le stesse eccezioni
+		
+		[ ] vanno scritti tutti i getter per tutti gli attributi privati
+
+		[ ] aggiungere una funzione membro 'beSigned()' che prende un
+			burocrate come parametro. Questa dovra' cambiare lo stato di is_signed se il grade del burocrate e' piu' grande del required
+			to sign. Se il voto e' troppo basso allora parte l'exception
+
+		[ ] crea la funzione membro 'signForm()' questa dovrebbe chiamare
+			Form::beSign() per tentare di firmare il form. Se il form 
+			e' firmato con successo allora vine stampato qualcosa come:
+				<bureaucrat> signed <form>
+
+			senno':
+				<bureaucrat> couldn’t sign <form> because <reason>.
+		
+		[ ] non dimenticare l'orthodoxal form
