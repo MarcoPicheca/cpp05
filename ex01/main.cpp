@@ -18,17 +18,18 @@ int main ()
 	{
 		std::cerr << e.what() << '\n';
 	}
-
-	Bureaucrat spino("spinotto", 12);
-	Bureaucrat copia(spino);
-	Bureaucrat copia2;
-
-	copia2.operator=(spino);
-	spino.decrementGrade();
-	std::cout << spino;
-	spino.incrementGrade();
-	std::cout << spino;
-	std::cout << copia;
-	std::cout << copia2;
+	try
+	{
+		Form f;
+		Bureaucrat firma("Zio", 2);
+		Bureaucrat firma2("Zio2", 30);
+		firma.signForm(f);
+		firma2.signForm(f);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 	return 0;
 }

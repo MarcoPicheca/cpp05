@@ -29,8 +29,8 @@ class Form
 				virtual const char *what() const throw();
 		};
 		std::string getName() const;
-		const size_t getRequiredSign();
-		const size_t getRequiredExecute();
+		size_t getRequiredSign();
+		size_t getRequiredExecute();
 		bool getSign() const;
 };
 

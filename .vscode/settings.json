@@ -1,0 +1,11 @@
+{
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/include",
+        "/usr/include",
+        "/usr/local/include"
+    ],
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+}

@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++",
+            "type": "shell",
+            "command": "c++",
+            "args": [
+                "-g",
+                "${workspaceFolder}/src/main.cpp",
+                "-o",
+                "${workspaceFolder}/bin/main"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila il progetto C++ con g++"
+        }
+    ]
+}

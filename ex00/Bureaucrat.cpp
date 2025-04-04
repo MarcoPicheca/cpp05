@@ -4,8 +4,8 @@ Bureaucrat::Bureaucrat(std::string const str, int num) : name(str)
 {
 	if (num >= 1 && num <= 150)
 		grade = num;
-	else if (num > 150) throw(GradeTooHighException());
-	else if (num < 1) throw(GradeTooLowException());
+	else if (num > 150) throw(GradeTooLowException());
+	else if (num < 1) throw(GradeTooHighException());
 }
 
 Bureaucrat::Bureaucrat() : name ("Default"){}
