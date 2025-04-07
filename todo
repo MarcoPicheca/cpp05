@@ -1,5 +1,5 @@
 {Bureaucrat ex01}
-- [ ] dare qualcosa da fare ai burocrati
+- [x] dare qualcosa da fare ai burocrati
 - [x] creare una classe Form:
 		[x] membri privati:
 			. const name
@@ -26,3 +26,56 @@
 				<bureaucrat> couldn’t sign <form> because <reason>.
 		
 		[x] non dimenticare l'orthodoxal form
+
+
+{Bureaucrat ex02}
+- [ ] AForm e' una classe astratta costruita sulla base di Form
+		[ ] tenere a mente che gli attributi devono rimanere privati
+
+QUESTE SONO CLASSI DERIVATE DA FORM
+
+- [ ] creare la classe ShrubberyCreationForm
+		[ ] grade rchiesti
+			1. require to sign = 145
+			2. require to exec = 137
+			3. la classe crea un file <target>_shrubbery con un metodo nella cwd e scrivici
+				ASCII trees (da vedere che sono)
+			4. come argomento del costruttore hanno un solo argomento
+				il <target>
+			5. controllare che il form sia sign (firmato) e che i grade
+				siano alti abbastanza
+
+- [ ] creare una classe RobotomyRequestForm
+		[ ] grade rchiesti
+			1. require to sign = 72
+			2. require to exec = 45
+			3. (da subject) fa un po' di rumore, poi infoma che  <target>
+				e' stato robotomizzato con successo il 50% delle volte.
+				Altrimenti, ti informa che la robotomizzazione e' fallita
+			4. come argomento del costruttore hanno un solo argomento
+				il <target>
+			5. controllare che il form sia sign (firmato) e che i grade
+				siano alti abbastanza
+
+- [ ] creare una classe PresidentialPardonForm
+		[ ] grade rchiesti
+			1. require to sign = 25
+			2. require to exec = 5
+			3. T'informa che il <target> e' stato perdonato da Zaphod Beeblebrox
+			4. come argomento del costruttore hanno un solo argomento
+				il <target>
+			5. controllare che il form sia sign = 1 (firmato) e che i grade
+				siano alti abbastanza, senno lancia (throw) exception
+
+- [ ] implementazioni classe Form  base:
+		[ ] aggiungere la funzione virtual execute(Bureaucrat const & executor) const
+
+		[ ] implementa una funzione che esegua le azioni dei form delle
+			classi concrete.
+
+- [ ] implementazioni nella Bureaucrat class :
+		[ ] executeForm(AForm const & form) const = 0 questa
+			dovebbe tentare di eseguire il form.
+			In caso di successo stampa qualcosa come:
+				<bureaucrat> executed <form>
+			if not stampa un messaggio di errore

@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 #include <iostream>
 #include "Bureaucrat.hpp"
 
@@ -30,9 +30,12 @@ class Form
 				virtual const char *what() const throw();
 		};
 		std::string getName() const;
-		size_t getRequiredSign();
-		size_t getRequiredExecute();
+		size_t getRequiredSign() const;
+		size_t getRequiredExecute() const;
 		bool getSign() const;
+		virtual void execute(Bureaucrat const & executor) const = 0;
 };
+	
+void printWhoAmI(std::string arg);
 
 #endif
