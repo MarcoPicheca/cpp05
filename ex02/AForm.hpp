@@ -1,6 +1,7 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
 #include <iostream>
+#include <cstdlib>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -13,7 +14,6 @@ class Form
 		const  size_t _required_to_sign;
 		const  size_t _required_to_execute;
 	public:
-		Form();
 		Form(std::string name, size_t r_to_sign, size_t r_to_execute);
 		Form(const Form& copy);
 		Form& operator=(const Form& copy);

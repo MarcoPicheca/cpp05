@@ -3,45 +3,44 @@
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& copy)
 {
 	if (this != &copy)
-		*this = copy;
+		_target = copy.getTarget();
 	return *this;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy, std::string target) :
-	Form(copy.getName(), copy.getRequiredSign(), copy.getRequiredExecute())
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	if (copy.getRequiredSign() > 72)
+	printWhoAmI("execute di Robotomy Form");
+	if (executor.getGrade() > 72)
 	{
-		printWhoAmI("costruttore di copia di Robotomy Form");
 		throw GradeTooLowException();
 	}
-	if (copy.getRequiredExecute() > 45)
+	if (executor.getGrade() > 45)
 	{
-		printWhoAmI("costruttore di copia di Robotomy Form");
 		throw GradeTooLowException();
 	}
+	srand(time(NULL));
+	int caso = rand();
 	std::cout << "(Some robotic noise...)\n";
-	rand() % 2 == 0 ?
-		std::cout << target << " the robotomization has been done successfully!\n" :
-		std::cout << target << " the robotomization failed\n";
+	if (caso % 2 == 0)
+		std::cout << _target << " the robotomization has been done successfully!\n";
+	else 
+		std::cout << _target << " the robotomization failed\n";
+}
+
+std::string RobotomyRequestForm::getTarget() const
+{
+	return _target;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) :
+	Form("RobotomyRequestForm", 72, 45)
+{
+	_target = copy.getTarget();
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45)
 {
-	if (Form::getRequiredSign() > 72)
-	{
-		printWhoAmI("costruttore di default di Robotomy Form");
-		throw GradeTooLowException();
-	}
-	if (Form::getRequiredExecute() > 45)
-	{
-		printWhoAmI("costruttore di default di Robotomy Form");
-		throw GradeTooLowException();
-	}
-	std::cout << "(Some robotic noise...)\n";
-	rand() % 2 == 0 ?
-		std::cout << target << " the robotomization has been done successfully!\n" :
-		std::cout << target << " the robotomization failed\n";
+	_target = target;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

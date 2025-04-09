@@ -40,11 +40,6 @@ std::string Form::getName() const
 	return _name;
 }
 
-Form::Form() : _name("Form Base") , _is_signed(0), 
-	_required_to_sign(150), _required_to_execute(150)
-{
-}
-
 Form::Form(const Form& copy) : _name(copy._name), _is_signed(copy._is_signed),
 	_required_to_sign(copy._required_to_sign), _required_to_execute(copy._required_to_execute)
 {
