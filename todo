@@ -29,13 +29,13 @@
 
 
 {Bureaucrat ex02}
-- [ ] AForm e' una classe astratta costruita sulla base di Form
-		[ ] tenere a mente che gli attributi devono rimanere privati
+- [x] AForm e' una classe astratta costruita sulla base di Form
+		[x] tenere a mente che gli attributi devono rimanere privati
 
 QUESTE SONO CLASSI DERIVATE DA FORM
 
-- [ ] creare la classe ShrubberyCreationForm
-		[ ] grade rchiesti
+- [x] creare la classe ShrubberyCreationForm
+		[x] grade rchiesti
 			1. require to sign = 145
 			2. require to exec = 137
 			3. la classe crea un file <target>_shrubbery con un metodo nella cwd e scrivici
@@ -45,8 +45,8 @@ QUESTE SONO CLASSI DERIVATE DA FORM
 			5. controllare che il form sia sign (firmato) e che i grade
 				siano alti abbastanza
 
-- [ ] creare una classe RobotomyRequestForm
-		[ ] grade rchiesti
+- [x] creare una classe RobotomyRequestForm
+		[x] grade rchiesti
 			1. require to sign = 72
 			2. require to exec = 45
 			3. (da subject) fa un po' di rumore, poi infoma che  <target>
@@ -57,8 +57,8 @@ QUESTE SONO CLASSI DERIVATE DA FORM
 			5. controllare che il form sia sign (firmato) e che i grade
 				siano alti abbastanza
 
-- [ ] creare una classe PresidentialPardonForm
-		[ ] grade rchiesti
+- [x] creare una classe PresidentialPardonForm
+		[x] grade rchiesti
 			1. require to sign = 25
 			2. require to exec = 5
 			3. T'informa che il <target> e' stato perdonato da Zaphod Beeblebrox
@@ -67,15 +67,25 @@ QUESTE SONO CLASSI DERIVATE DA FORM
 			5. controllare che il form sia sign = 1 (firmato) e che i grade
 				siano alti abbastanza, senno lancia (throw) exception
 
-- [ ] implementazioni classe Form  base:
-		[ ] aggiungere la funzione virtual execute(Bureaucrat const & executor) const
+- [x] implementazioni classe Form  base:
+		[x] aggiungere la funzione virtual execute(Bureaucrat const & executor) const
 
-		[ ] implementa una funzione che esegua le azioni dei form delle
+		[x] implementa una funzione che esegua le azioni dei form delle
 			classi concrete.
 
-- [ ] implementazioni nella Bureaucrat class :
-		[ ] executeForm(AForm const & form) const = 0 questa
+- [x] implementazioni nella Bureaucrat class :
+		[x] executeForm(AForm const & form) const = 0 questa
 			dovebbe tentare di eseguire il form.
 			In caso di successo stampa qualcosa come:
 				<bureaucrat> executed <form>
 			if not stampa un messaggio di errore
+
+{Bureaucrat ex03}
+- [ ] Creare una classe intern che non ha alcun membro privato ma solo member function:
+		- [ ] makeForm() per fare il lavoro del burocrate, prende due stringhe:
+				1. il nome di un Form (ShrubberyCreationForm
+					, RobotomyRequestForm, PresidentialPardonForm)
+				2. il target del Form
+				3. ritorna un AForm*
+				4. dovrebbe stampare 'Intern creats <form>'
+					NB. se il nome del form non esiste -> errore
