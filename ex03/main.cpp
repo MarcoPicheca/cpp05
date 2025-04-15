@@ -14,6 +14,36 @@ int main()
 	Intern  someRandomIntern;
 	Form*   rrf;
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	rrf->execute(primo);
+	if (rrf)
+	{
+		rrf->execute(primo);
+		delete rrf;
+	}
+	try
+	{
+		rrf = someRandomIntern.makeForm("shrubbery creation", "Alex");
+		if (rrf)
+		{
+			rrf->execute(primo);
+			delete rrf;
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		rrf = someRandomIntern.makeForm("presidential pardon", "Julio");
+		if (rrf)
+		{
+			rrf->execute(primo);
+			delete rrf;
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return 0;
 }

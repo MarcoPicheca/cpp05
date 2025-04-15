@@ -9,7 +9,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& c
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	printWhoAmI("execute di Robotomy Form");
+	// printWhoAmI("Execute di Robotomy Form");
 	if (executor.getGrade() > 72)
 	{
 		throw GradeTooLowException();
@@ -29,26 +29,26 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 
 std::string RobotomyRequestForm::getTarget() const
 {
-	printWhoAmI("Getter target robotomy");
+	// printWhoAmI("Getter target robotomy");
 	return _target;
 }
 
 void*	RobotomyRequestForm::operator new(size_t memberSize)
 {
-	printWhoAmI("New robotomy operator");
+	// printWhoAmI("New robotomy operator");
 	return ::operator new(memberSize);
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) :
 	Form("RobotomyRequestForm", 72, 45)
 {
-	printWhoAmI("Copy constructor robotomy");
+	// printWhoAmI("Copy constructor robotomy");
 	_target = copy.getTarget();
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45)
 {
-	printWhoAmI("Default constructor robotomy");
+	// printWhoAmI("Default constructor robotomy");
 	_target = target;
 }
 

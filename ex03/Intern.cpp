@@ -18,26 +18,27 @@ Intern	&Intern::operator=(const Intern &copy)
 Form* Intern::makeForm(std::string formName, std::string formTarget)
 {
 	std::string arr_name[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	ShrubberyCreationForm a(formTarget);
-	RobotomyRequestForm b(formTarget);
-	PresidentialPardonForm c(formTarget);
-	Form* arr_form[3] = {&a, &b, &c};
-	// Form* newForm = (Form *)NULL;
-	for (size_t i = 0; i < 3; i++)
+	int i = 0;
+	while (i < 3)
 	{
 		if (formName.compare(arr_name[i]) == 0)
-			return arr_form[i];
+			break ;
+		i++;
 	}
-	std::cout << "Intern creates " << formName << std::endl;
-	// if (formName.compare("shrubbery creation") == 0)
-	// 	newForm =  new ShrubberyCreationForm(formTarget);
-	// else if (formName.compare("robotomy request") == 0)
-	// 	newForm =  new RobotomyRequestForm(formTarget);
-	// else if (formName.compare("presidential pardon") == 0)
-	// 	newForm =  new PresidentialPardonForm(formTarget);
-	// else
-	// 	std::cout << "No such Form type\n";
-	return (NULL);
+	switch (i)
+	{
+		case 0: 
+			std::cout << "Intern creates " << formName << std::endl;
+			return new ShrubberyCreationForm(formTarget);
+		case 1: 
+			std::cout << "Intern creates " << formName << std::endl;
+			return new RobotomyRequestForm(formTarget);
+		case 2:
+			std::cout << "Intern creates " << formName << std::endl;
+			return new PresidentialPardonForm(formTarget);
+	}
+	std::cerr << "No such Form type " << formName << std::endl;
+	return ((Form *)NULL);
 }
 
 Intern::~Intern()

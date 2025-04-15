@@ -9,7 +9,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& c
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	printWhoAmI("execute di Robotomy Form");
+	// printWhoAmI("execute di Robotomy Form");
 	if (executor.getGrade() > 72)
 	{
 		throw GradeTooLowException();

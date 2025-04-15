@@ -36,6 +36,6 @@ class Form
 		virtual void execute(Bureaucrat const & executor) const = 0;
 };
 	
-void printWhoAmI(std::string arg);
+// void printWhoAmI(std::string arg);
 
 #endif

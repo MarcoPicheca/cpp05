@@ -21,7 +21,7 @@ std::string ShrubberyCreationForm::getTarget() const
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	printWhoAmI("execcute ShrubberyCreationForm");
+	// printWhoAmI("execcute ShrubberyCreationForm");
 	if (executor.getGrade() > 145)
 	{
 		throw GradeTooLowException();
@@ -50,7 +50,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) 
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137)
 {
-	printWhoAmI("costruttore ShrubberyCreationForm");
+	// printWhoAmI("costruttore ShrubberyCreationForm");
 	_target = target;
 }
 
