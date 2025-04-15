@@ -6,12 +6,12 @@ Bureaucrat::Bureaucrat(std::string const str, int num) : name(str)
 		grade = num;
 	else if (num > 150)
 	{
-		std::cout << str << '\n';
+		std::cout << str << ' ';
 		throw(GradeTooLowException());	
 	}
 	else if (num < 1)
 	{
-		std::cout << str << '\n';
+		std::cout << str << ' ';
 		throw(GradeTooHighException());	
 	}
 }
@@ -57,7 +57,14 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& B)
 
 void Bureaucrat::signForm(Form& f)
 {
-	f.beSign(*this);
+	try
+	{
+		f.beSigned(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	f.getSign() == 1 ? std::cout << name << " signed " << f.getName() << std::endl
 	: std::cout << name << " couldn't sign " << f.getName() << " because grade wasn't high enough.\n";
 }

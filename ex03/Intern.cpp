@@ -19,12 +19,8 @@ Form* Intern::makeForm(std::string formName, std::string formTarget)
 {
 	std::string arr_name[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	int i = 0;
-	while (i < 3)
-	{
-		if (formName.compare(arr_name[i]) == 0)
-			break ;
+	while (i < 3 && formName.compare(arr_name[i]) != 0)
 		i++;
-	}
 	switch (i)
 	{
 		case 0: 

@@ -11,7 +11,6 @@ class ShrubberyCreationForm : virtual public Form
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
-		void *operator new(size_t memberSize);
 		class FileNotOpen : public std::exception
 		{
 		public:

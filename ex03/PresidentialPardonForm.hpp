@@ -1,6 +1,7 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 class PresidentialPardonForm : public Form
 {
@@ -12,7 +13,6 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& copy);
 		~PresidentialPardonForm();
 		void execute(Bureaucrat const & executor) const;
-		void* operator new(size_t _memberSize);
 		std::string getTarget() const;
 };
 

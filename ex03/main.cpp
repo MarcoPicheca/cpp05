@@ -11,11 +11,13 @@ int main()
 
 	Bureaucrat primo("Frank", 24);
 	messia = cristo.makeForm("sjdc", "jdjjd");
+	delete messia;
 	Intern  someRandomIntern;
 	Form*   rrf;
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	if (rrf)
 	{
+		rrf->beSigned(primo);
 		rrf->execute(primo);
 		delete rrf;
 	}
@@ -24,6 +26,7 @@ int main()
 		rrf = someRandomIntern.makeForm("shrubbery creation", "Alex");
 		if (rrf)
 		{
+			rrf->beSigned(primo);
 			rrf->execute(primo);
 			delete rrf;
 		}
@@ -37,6 +40,7 @@ int main()
 		rrf = someRandomIntern.makeForm("presidential pardon", "Julio");
 		if (rrf)
 		{
+			rrf->beSigned(primo);
 			rrf->execute(primo);
 			delete rrf;
 		}

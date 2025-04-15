@@ -21,14 +21,15 @@ std::string ShrubberyCreationForm::getTarget() const
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	// printWhoAmI("execcute ShrubberyCreationForm");
 	if (executor.getGrade() > 145)
 	{
-		throw GradeTooLowException();
+		delete this;
+		throw Form::GradeTooLowException();
 	}
 	if (executor.getGrade() > 137)
 	{
-		throw GradeTooLowException();
+		delete this;
+		throw Form::GradeTooLowException();
 	}
 	std::string target = this->getTarget();
 	target.append("_shrubbery");
@@ -40,7 +41,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	}
 	ascii_tree << "    *\n   /.\\\n  /...\\\n /.....\\\n/.......\\\n    ..\n    ..\n";
 	ascii_tree.close();
-	// std::cout << "    *\n   /.\\\n  /...\\\n /.....\\\n/.......\\\n    ..\n    ..\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : Form("ShrubberyCreationForm", copy.getRequiredSign(), copy.getRequiredExecute())
@@ -52,11 +52,6 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
 {
 	// printWhoAmI("costruttore ShrubberyCreationForm");
 	_target = target;
-}
-
-void* ShrubberyCreationForm::operator new(size_t memberSize)
-{
-	return ::operator new(memberSize);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

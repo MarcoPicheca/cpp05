@@ -12,7 +12,6 @@ class RobotomyRequestForm : public Form
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& copy);
 		~RobotomyRequestForm();
 		void execute(Bureaucrat const & executor) const;
-		void* operator new(size_t memberSize);
 		std::string getTarget() const;
 };
 

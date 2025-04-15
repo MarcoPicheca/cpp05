@@ -19,21 +19,10 @@ Form::Form(std::string name, size_t r_to_sign, size_t r_to_execute) : _name(name
 		_required_to_sign(r_to_sign), _required_to_execute(r_to_execute)
 {
 	if (_required_to_execute > 150 || _required_to_sign > 150)
-	{
-		// printWhoAmI("costruttore di default con args");
 		throw Form::GradeTooLowException();
-	}
 	if (_required_to_execute < 1 || _required_to_sign < 1)
-	{
-		// printWhoAmI("costruttore di default con args");
 		throw Form::GradeTooHighException();
-	}
 }
-
-// void printWhoAmI(std::string arg)
-// {
-// 	std::cout << arg << std::endl;
-// }
 
 std::string Form::getName() const
 {
@@ -51,19 +40,12 @@ Form& Form::operator=(const Form& copy)
 	return *this;
 }
 
-void	Form::beSign(const Bureaucrat& burocrate)
+void	Form::beSigned(const Bureaucrat& burocrate)
 {
-	if (burocrate.getGrade() < 1)
-	{
-		// printWhoAmI("beSign ft");
-		throw (GradeTooHighException());
-	}
-	if (burocrate.getGrade() > 150)
-	{
-		// printWhoAmI("beSign ft");
+	if (burocrate.getGrade() > Form::getRequiredSign())
 		throw (GradeTooLowException());
-	}
-	burocrate.getGrade() < _required_to_sign ? _is_signed = 1 : throw(GradeTooLowException());
+	std::cout << _name << ": valid grade to sign\n";
+	_is_signed = 1;
 }
 
 const char *Form::GradeTooHighException::what() const throw()

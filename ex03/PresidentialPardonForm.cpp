@@ -8,21 +8,17 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& cop
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	// printWhoAmI("execute presidential pardon form");
 	if (executor.getGrade() > 25)
 	{
+		delete this;
 		throw Form::GradeTooLowException();
 	}
 	if (executor.getGrade() > 5)
 	{
+		delete this;
 		throw Form::GradeTooLowException();
 	}
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox\n";
-}
-
-void*	PresidentialPardonForm::operator new(size_t memberSize)
-{
-	return ::operator new(memberSize);
 }
 
 std::string PresidentialPardonForm::getTarget() const

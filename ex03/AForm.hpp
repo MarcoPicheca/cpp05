@@ -17,7 +17,7 @@ class Form
 		Form(std::string name, size_t r_to_sign, size_t r_to_execute);
 		Form(const Form& copy);
 		Form& operator=(const Form& copy);
-		void beSign(const Bureaucrat& burocrate);
+		void beSigned(const Bureaucrat& burocrate);
 		virtual ~Form();
 		class GradeTooHighException : public std::exception
 		{
